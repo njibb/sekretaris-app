@@ -15,7 +15,7 @@ export default async function TambahKalenderPage() {
     const judul = formData.get("judul") as string;
     const tanggal = new Date(formData.get("tanggal") as string);
 
-    await prisma.KalenderKerja.create({
+    await prisma.kalenderKerja.create({
       data: { judul, tanggal }
     });
     redirect("/kalender");
