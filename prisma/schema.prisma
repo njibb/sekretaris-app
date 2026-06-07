@@ -89,7 +89,7 @@ model Rapat {
   createdAt DateTime @default(now())
 }
 
-model KalenderKerja {
+model kalenderKerja {
   id        String   @id @default(cuid())
   judul     String
   deskripsi String?
