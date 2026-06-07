@@ -3,7 +3,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { prisma } from "@/lib/prisma"; // Pakai @ biar aman dari garis merah
 import bcrypt from "bcrypt";
 
-const handler = NextAuth({
+// 1. KITA BUAT VARIABEL authOptions DAN LANGSUNG DI-EXPORT
+export const authOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -31,6 +32,9 @@ const handler = NextAuth({
   ],
   pages: { signIn: '/login' },
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+// 2. KITA MASUKIN authOptions TADI KE DALAM SINI
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

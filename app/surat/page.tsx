@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth/next";
+// 1. IMPORT AUTH OPTIONS (Pastikan path folder ini sesuai dengan letak file route.ts lu)
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"; 
 import NavbarUser from "../components/navbaruser";
-import DeleteSuratButton from "../components/deletesuratbutton"; // <-- Import Tombol Hapus
+import DeleteSuratButton from "../components/deletesuratbutton"; 
 import { prisma } from "@/lib/prisma";
 
 export default async function ArsipSuratPage() {
-  const session = await getServerSession();
+  // 2. MASUKIN AUTH OPTIONS KE DALAM KURUNG
+  const session = await getServerSession(authOptions);
 
   const semuaSurat = await prisma.surat.findMany({
     orderBy: {
@@ -91,7 +94,6 @@ export default async function ArsipSuratPage() {
                         </span>
                       </td>
                       <td className="px-6 py-4 text-center">
-                        {/* Pasang Tombol Hapus Di Sini */}
                         <DeleteSuratButton id={surat.id} />
                       </td>
                     </tr>
