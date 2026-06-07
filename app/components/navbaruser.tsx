@@ -108,7 +108,7 @@ export default function NavbarUser({ session }: any) {
                   <Link href="/surat/tambah" onClick={() => setIsMobileMenuOpen(false)} className="bg-emerald-50 text-emerald-700 text-center py-2 rounded-lg text-sm font-bold">
                     + Buat Surat
                   </Link>
-                  <Link href="/notulensi/catat-rapat" onClick={() => setIsMobileMenuOpen(false)} className="bg-emerald-50 text-emerald-700 text-center py-2 rounded-lg text-sm font-bold">
+                  <Link href="/catat-rapat" onClick={() => setIsMobileMenuOpen(false)} className="bg-emerald-50 text-emerald-700 text-center py-2 rounded-lg text-sm font-bold">
                     + Catat Rapat
                   </Link>
                 </div>
