@@ -113,6 +113,7 @@ export default async function HomePage() {
                 {agendaTerbaru.length === 0 ? (
                     <p className="text-gray-500 text-sm italic">Belum ada agenda terdaftar.</p>
                 ) : (
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     agendaTerbaru.map((agenda: { id: Key | null | undefined; tanggal: Date; judul: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }) => (
                     <div key={agenda.id} className="flex items-start p-4 rounded-2xl border border-gray-100 hover:border-emerald-200 transition-colors bg-gray-50 hover:bg-white">
                         <div className="flex-shrink-0 w-14 text-center mr-4">
